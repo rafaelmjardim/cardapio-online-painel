@@ -17,8 +17,16 @@ export class SidebarComponent implements OnInit {
   initMenuList = () => {
     this.menuList = [
       {
-        name: 'home',
-        icon: ''
+        name: 'Home',
+        icon: 'Home'
+      },
+      {
+        name: 'Produtos',
+        icon: 'PackageSearch'
+      },
+      {
+        name: 'Pedidos',
+        icon: 'ShoppingCart'
       },
     ]
   }

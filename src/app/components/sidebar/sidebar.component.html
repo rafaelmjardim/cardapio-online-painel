@@ -4,9 +4,9 @@
     </div>
 
     <ul class="sidebar_menu">
-        <li class="sidebar_menu_item">
-            <lucide-icon name="Home" color="#444"></lucide-icon>
-            <span>Home</span>
+        <li class="sidebar_menu_item" *ngFor="let item of menuList">
+            <lucide-icon [name]="item.icon" color="#444"></lucide-icon>
+            <span>{{item.name}}</span>
         </li>
     </ul>
 </div>
