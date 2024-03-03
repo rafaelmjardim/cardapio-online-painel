@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  testeList: any[] = [];
-
-  ngOnInit(): void {
-    this.testeList = ['teste', 'teste']
-  }
+  testeList: string[] = ['teste1', 'teste2']
 }

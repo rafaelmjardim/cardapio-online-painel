@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cardapio-online-painel';
+
+  testeList: string[] = ['teste1', 'teste2']
 }

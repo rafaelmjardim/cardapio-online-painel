@@ -6,14 +6,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LucideAngularModule, Home, PackageSearch, ShoppingCart } from 'lucide-angular';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './pages/home/home.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
+    HomeComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
