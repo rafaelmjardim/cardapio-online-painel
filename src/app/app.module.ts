@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LucideAngularModule, Home, PackageSearch, ShoppingCart } from 'lucide-angular';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [
