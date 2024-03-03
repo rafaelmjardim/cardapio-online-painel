@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LucideAngularModule, Home, PackageSearch, ShoppingCart } from 'lucide-angular';
-import { ProductsComponent } from './pages/products/products.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { ProductsComponent } from './pages/products/products.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     LucideAngularModule.pick({Home, PackageSearch, ShoppingCart})
   ],
   providers: [],
