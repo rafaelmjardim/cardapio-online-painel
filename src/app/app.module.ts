@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CreateProductComponent } from './pages/create-product/create-product.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LucideAngularModule, Home } from 'lucide-angular';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LucideAngularModule.pick({Home})
   ],
   providers: [],
   bootstrap: [AppComponent]
