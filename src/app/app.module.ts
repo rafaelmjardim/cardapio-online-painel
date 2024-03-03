@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { LucideAngularModule, Home, PackageSearch, ShoppingCart } from 'lucide-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { LucideAngularModule, Home, PackageSearch, ShoppingCart, X } from 'lucide-angular';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { ProductsComponent } from './pages/products/products.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LucideAngularModule.pick({Home, PackageSearch, ShoppingCart})
+    LucideAngularModule.pick({Home, PackageSearch, ShoppingCart, X})
   ],
   providers: [],
   bootstrap: [AppComponent]
