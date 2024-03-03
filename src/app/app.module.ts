@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CreateProductComponent } from './pages/create-product/create-product.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LucideAngularModule, Home, PackageSearch, ShoppingCart } from 'lucide-angular';
 
@@ -12,8 +11,7 @@ import { LucideAngularModule, Home, PackageSearch, ShoppingCart } from 'lucide-a
   declarations: [
     AppComponent,
     HeaderComponent,
-    CreateProductComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
