@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LucideAngularModule, Home, PackageSearch, ShoppingCart, X } from 'lucide-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { LucideAngularModule, Home, PackageSearch, ShoppingCart, X } from 'lucid
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     HttpClientModule,
-    LucideAngularModule.pick({Home, PackageSearch, ShoppingCart, X})
+    LucideAngularModule.pick({Home, PackageSearch, ShoppingCart, X}),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

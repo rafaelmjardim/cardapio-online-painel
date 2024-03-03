@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './products.service';
 import { Product } from './products';
+import { HttpErrorResponse } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateProductDialogComponent } from './components/create-product-dialog/create-product-dialog.component';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +14,10 @@ export class ProductsComponent implements OnInit {
 
   productsList!: Product[];
 
-  constructor (private products_service: ProductsService){}
+  constructor (
+    private products_service: ProductsService,
+    private dialog: MatDialog
+  ){}
 
   ngOnInit(): void {
     this.onGetProducts();
@@ -23,6 +29,21 @@ export class ProductsComponent implements OnInit {
         this.productsList = products_response;        
       }
     })
+  }
+
+  deleteProduct = (codigo: number, urlImage: string) => {        
+    this.products_service.deleteProduct(codigo, urlImage).subscribe({
+      next: (delete_response) => {
+        console.log('Deletou');
+      },
+      error: (error_response: HttpErrorResponse) => {
+        console.log('Falha ao deletar:', error_response);
+      }
+    })
+  }
+
+  handleOpenCreateDialog = () => {
+    this.dialog.open(CreateProductDialogComponent);
   }
 
 }
