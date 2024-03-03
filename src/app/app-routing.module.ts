@@ -14,7 +14,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'cadastrar-produto',
+    path: 'produtos',
     component: CreateProductComponent
   },
   {

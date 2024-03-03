@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { menuItem } from './sidebar';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,24 +10,32 @@ import { menuItem } from './sidebar';
 export class SidebarComponent implements OnInit {
 
   menuList!: menuItem[];
+  currentPage!: any;
+
+  constructor (
+    public location: Location
+  ) {}
 
   ngOnInit(): void {
-    this.initMenuList();
+    this.initMenuList();    
   }
 
   initMenuList = () => {
     this.menuList = [
       {
         name: 'Home',
-        icon: 'Home'
+        icon: 'Home',
+        rota: '',
       },
       {
         name: 'Produtos',
-        icon: 'PackageSearch'
+        icon: 'PackageSearch',
+        rota: '/produtos',
       },
       {
         name: 'Pedidos',
-        icon: 'ShoppingCart'
+        icon: 'ShoppingCart',
+        rota: '/login',
       },
     ]
   }

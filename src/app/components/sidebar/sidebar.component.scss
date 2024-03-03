@@ -16,14 +16,18 @@
     &_menu {
         display: flex;
         flex-direction: column;
-        gap: 1.4rem;
-        padding: 2rem;
 
         &_item {
             display: flex;
             align-items: center;
             gap: 1.2rem;
+            padding: 1.2rem 2rem;
             cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                background-color: #ddd;
+            }
         }
     }
 }
