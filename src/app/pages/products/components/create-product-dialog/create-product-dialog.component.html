@@ -4,7 +4,7 @@
     </div>
 
     <div class="create_product_dialog_main">
-        <form class="create_product_dialog_main_form">
+        <form class="create_product_dialog_main_form" [formGroup]="productForm">
             <div class="create_product_dialog_main_form_group">
                 <label class="create_product_dialog_main_form_group_label">Nome do produto</label>
                 <input class="create_product_dialog_main_form_group_input" type="text" placeholder="Nome do produto" formControlName="productNameInput">
@@ -26,10 +26,10 @@
                 <option [value]="2">Porções</option>
                 <option [value]="3">Refrigerante</option>
             </select>
-            <!-- <input type="file" (change)="changeUploadFile($event)" formControlName="productFileInput">
-            <button class="cadastro_produtos_container_form_button" (click)="submitProductForm()">Enviar</button> -->
+
+            <input type="file" (change)="changeUploadFile($event)" formControlName="productFileInput">
             <div class="create_product_dialog_main_form_actions">
-                
+                <button class="cadastro_produtos_container_form_button button-apply" (click)="handleSubmitProduct()">Enviar</button>
             </div>
         </form>
     </div>

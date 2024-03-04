@@ -24,3 +24,20 @@ a {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// classes globais
+
+.button-apply {
+    border-radius: .5rem;
+    width: 11rem;
+    height: 3.5rem;
+    border: .1rem solid rgb(49, 172, 145);
+    background-color: rgb(61, 214, 181);
+    cursor: pointer;
+    transition: .2s;
+    
+    &:hover {
+        background-color: rgb(56, 192, 163);
+    }
+}
