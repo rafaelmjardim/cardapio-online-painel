@@ -1,1 +1,36 @@
-<p>create-product-dialog works!</p>
+<div class="create_product_dialog">
+    <div class="create_product_dialog_header">
+        <h2>Cadastrar produto</h2>
+    </div>
+
+    <div class="create_product_dialog_main">
+        <form class="create_product_dialog_main_form">
+            <div class="create_product_dialog_main_form_group">
+                <label class="create_product_dialog_main_form_group_label">Nome do produto</label>
+                <input class="create_product_dialog_main_form_group_input" type="text" placeholder="Nome do produto" formControlName="productNameInput">
+            </div>
+
+            <div class="create_product_dialog_main_form_group">
+                <label class="create_product_dialog_main_form_group_label">Descrição do produto</label>
+                <input class="create_product_dialog_main_form_group_input" type="text" placeholder="Descrição do produto" formControlName="productDescriptionInput">
+            </div>
+            
+            <div class="create_product_dialog_main_form_group">
+                <label class="create_product_dialog_main_form_group_label">Valor do produto</label>
+                <input class="create_product_dialog_main_form_group_input" type="text" placeholder="Valor do produto" formControlName="productValueInput">
+            </div>
+            
+            <select class="create_product_dialog_main_form_select" name="categoria" id="categoria"  formControlName="productCategoryInput">
+                <option value="" disabled selected hidden>Selecione uma categoria</option>
+                <option [value]="1">Lanches</option>
+                <option [value]="2">Porções</option>
+                <option [value]="3">Refrigerante</option>
+            </select>
+            <!-- <input type="file" (change)="changeUploadFile($event)" formControlName="productFileInput">
+            <button class="cadastro_produtos_container_form_button" (click)="submitProductForm()">Enviar</button> -->
+            <div class="create_product_dialog_main_form_actions">
+                
+            </div>
+        </form>
+    </div>
+</div>
