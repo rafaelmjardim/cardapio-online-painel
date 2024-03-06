@@ -26,7 +26,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     HttpClientModule,
     LucideAngularModule.pick({Home, PackageSearch, ShoppingCart, X}),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

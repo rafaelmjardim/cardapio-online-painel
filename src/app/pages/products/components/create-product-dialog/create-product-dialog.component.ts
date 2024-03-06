@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ProductsService } from '../../products.service';
 
 @Component({
   selector: 'app-create-product-dialog',
@@ -9,7 +10,10 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class CreateProductDialogComponent implements OnInit {
   productForm!: FormGroup;
 
-  constructor (private form_builder: FormBuilder ){}
+  constructor (
+    private form_builder: FormBuilder,
+    private products_service: ProductsService
+  ){}
 
   ngOnInit(): void {
     this.initProductForm();
@@ -17,7 +21,7 @@ export class CreateProductDialogComponent implements OnInit {
 
   initProductForm = () => {
     this.productForm = this.form_builder.group({
-      productNameInput: ['teste'],
+      productNameInput: [''],
       productDescriptionInput: [''],
       productValueInput: [''],
       productCategoryInput: [''],
@@ -34,6 +38,9 @@ export class CreateProductDialogComponent implements OnInit {
   }
 
   handleSubmitProduct = () => {
-    alert('Clicou!')
+    this.products_service.postProduct().subscribe(res => {
+      console.log('cadastrou', res);
+      
+    });
   }
 }
