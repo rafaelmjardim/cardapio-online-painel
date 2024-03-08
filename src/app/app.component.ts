@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './services/user/user.service';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,6 @@ export class AppComponent {
   title = 'cardapio-online-painel';
 
   constructor (
-    public user_service: UserService
+    public auth_service: AuthService
   ){}
 }

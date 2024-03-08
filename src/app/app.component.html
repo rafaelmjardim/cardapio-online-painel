@@ -1,9 +1,9 @@
 <div class="app">
-  <div class="app_sidebar" *ngIf="user_service.logged">
+  <div class="app_sidebar" *ngIf="auth_service.isLoggedIn()">
     <app-sidebar></app-sidebar>
   </div>
 
-  <div class="app_main">
+  <div class="app_main" [ngStyle]="{'padding': auth_service.isLoggedIn() ? '2rem' : '0'}">
     <router-outlet></router-outlet>
   </div>
 </div>

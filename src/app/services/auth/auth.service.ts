@@ -15,6 +15,7 @@ export class AuthService {
 
   isLoggedIn = (): boolean => {
     const token = localStorage.getItem('token');
+console.log('teste de render');
 
     return !!token // returna true se o token existir, false se não!!
   }
