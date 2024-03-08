@@ -1,9 +1,9 @@
 <div class="login">
     <form class="login_form" [formGroup]="loginForm">
         <h2 class="login_form_title">Login</h2>
-        <input class="login_form_input" type="text" placeholder="Informe seu e-mail" formControlName="emailInput">
-        <input class="login_form_input" type="text" placeholder="Informe sua senha" formControlName="passwordInput">
+        <input class="login_form_input" type="text" placeholder="Informe seu usuário" formControlName="userInput">
+        <input class="login_form_input" type="password" placeholder="Informe sua senha" formControlName="passwordInput">
 
-        <button class="login_form_button">Enviar</button>
+        <button class="login_form_button" (click)="submit()">Enviar</button>
     </form>
 </div>

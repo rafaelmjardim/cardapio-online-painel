@@ -11,7 +11,7 @@ const API_KEY = environment.API_KEY;
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   isLoggedIn = (): boolean => {
     const token = localStorage.getItem('token');
