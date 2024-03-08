@@ -23,4 +23,8 @@ console.log('teste de render');
   login = (login: Login): Observable<any> => {
     return this.http.post(`${API_KEY}/login`, login);
   }
+
+  logout = () => {
+    localStorage.removeItem('token');
+  }
 }

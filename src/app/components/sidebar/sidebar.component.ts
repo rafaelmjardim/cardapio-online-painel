@@ -35,7 +35,7 @@ export class SidebarComponent implements OnInit {
       {
         name: 'Pedidos',
         icon: 'ShoppingCart',
-        rota: '/login',
+        rota: '/pedidos',
       },
     ]
   }

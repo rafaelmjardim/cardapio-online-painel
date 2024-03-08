@@ -8,9 +8,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { LucideAngularModule, Home, PackageSearch, ShoppingCart, X } from 'lucide-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+
+import { LucideAngularModule, Home, PackageSearch, ShoppingCart, X, User, LogOut } from 'lucide-angular';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    LucideAngularModule.pick({Home, PackageSearch, ShoppingCart, X}),
+    LucideAngularModule.pick({Home, PackageSearch, ShoppingCart, X, User, LogOut}),
     BrowserAnimationsModule,
   ],
   providers: [],

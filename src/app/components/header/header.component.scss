@@ -1,18 +1,14 @@
 .header {
-    padding: 4rem 0;
+    padding: 2rem 0;
 
-    &_menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
+    // background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        &_item {
-            font-size: 1.8rem;
-            
-            &_link {
-                cursor: pointer;
-            }
+    &_user {
+        lucide-icon {
+            cursor: pointer;
         }
     }
 }

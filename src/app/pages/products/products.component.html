@@ -1,14 +1,14 @@
 <div class="products">
     <div class="products_header">
-        <h2>Produtos</h2>
-        
-        <div class="products_header_subheader">
-            <input class="products_header_subheader_search" type="text" placeholder="Pesquisar produto">
+        <app-header title="Produtos"></app-header>
+    </div>
 
-            <button class="products_header_subheader_button" (click)="handleOpenCreateDialog()">
-                Novo Produto
-            </button>
-        </div>
+    <div class="products_subheader">
+        <input class="products_subheader_search" type="text" placeholder="Pesquisar produto">
+
+        <button class="products_subheader_button" (click)="handleOpenCreateDialog()">
+            Novo Produto
+        </button>
     </div>
 
     <div class="products_main">
