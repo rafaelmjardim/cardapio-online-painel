@@ -44,6 +44,8 @@ export class ProductsComponent implements OnInit {
 
   handleOpenCreateDialog = () => {
     this.dialog.open(CreateProductDialogComponent);
+
+    this.products_service.updateGetProductSubject(this.onGetProducts);
   }
 
 }

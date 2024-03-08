@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { APP_ID, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environment/environment.prod';
 import { Product, ProductREQ } from './products';
 import { NewProduct } from './components/create-product-dialog/create-product-dialog';
@@ -11,13 +11,18 @@ const API_KEY = environment.API_KEY;
   providedIn: 'root'
 })
 export class ProductsService {
+  getProductsSubject = new BehaviorSubject<Function>(() => null );
+  getProductsStream$ = this.getProductsSubject.asObservable();
 
   constructor(private http: HttpClient) { }
+
+  updateGetProductSubject = (producGetFunction: Function) => {
+    this.getProductsSubject.next(producGetFunction)
+  }
 
   getProducts = ():Observable<ProductREQ> => {
     return this.http.get<ProductREQ>(`${API_KEY}/produtos`);
   }
-
   
   postProduct = (newProduct: NewProduct) => {
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA5ODYxODEyLCJleHAiOjE3MDk5NDgyMTJ9.5dxldxx2MntRhsu09ZO4chqgIXOhmQjDFM7IUV_RuPE'

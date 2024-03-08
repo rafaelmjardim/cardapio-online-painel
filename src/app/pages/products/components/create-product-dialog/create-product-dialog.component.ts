@@ -1,26 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProductsService } from '../../products.service';
 import { Product } from '../../products';
 import { NewProduct } from './create-product-dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-create-product-dialog',
   templateUrl: './create-product-dialog.component.html',
   styleUrls: ['./create-product-dialog.component.scss']
 })
-export class CreateProductDialogComponent implements OnInit {
+export class CreateProductDialogComponent implements OnInit, OnDestroy {
+  subscription!: Subscription
+  
   productForm!: FormGroup;
-
   uploadImg!: any;
+
+  getProductsSubscription!: Function;
 
   constructor (
     private form_builder: FormBuilder,
-    private products_service: ProductsService
+    private products_service: ProductsService,
+    private matdialog: MatDialog
   ){}
 
   ngOnInit(): void {
     this.initProductForm();
+    this.onGetProductSubscription();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  onGetProductSubscription = () => {
+    this.subscription = this.products_service.getProductsStream$.subscribe(getProductFunction => {
+      this.getProductsSubscription = getProductFunction;
+    })
   }
 
   initProductForm = () => {
@@ -30,7 +47,6 @@ export class CreateProductDialogComponent implements OnInit {
       productValueInput: [''],
       productCategoryInput: [''],
       productFileInput: ['']
-
     })
   }
 
@@ -49,10 +65,11 @@ export class CreateProductDialogComponent implements OnInit {
       file: this.uploadImg
     }
 
-    this.products_service.postProduct(newProduct).subscribe(res => {
-      
-    });
-
-    
+    this.products_service.postProduct(newProduct).subscribe({
+      next: (products_response) => {
+        this.getProductsSubscription();
+        this.matdialog.closeAll();
+      }
+    })
   }
 }
