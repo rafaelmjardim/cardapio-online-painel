@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProductsService } from '../../products.service';
+import { Product } from '../../products';
+import { NewProduct } from './create-product-dialog';
 
 @Component({
   selector: 'app-create-product-dialog',
@@ -9,6 +11,8 @@ import { ProductsService } from '../../products.service';
 })
 export class CreateProductDialogComponent implements OnInit {
   productForm!: FormGroup;
+
+  uploadImg!: any;
 
   constructor (
     private form_builder: FormBuilder,
@@ -30,17 +34,25 @@ export class CreateProductDialogComponent implements OnInit {
     })
   }
 
-  changeUploadFile = (event: Event) => {
-    const file = event.target
-    
-    console.log(event);
-    
+  changeUploadFile = (event: any) => {
+    const target = event.target
+    this.uploadImg = target.files[0];    
   }
 
   handleSubmitProduct = () => {
-    this.products_service.postProduct().subscribe(res => {
-      console.log('cadastrou', res);
+
+    const newProduct: NewProduct = {
+      name: this.productForm.controls['productNameInput'].value,
+      value: this.productForm.controls['productValueInput'].value,
+      description: this.productForm.controls['productDescriptionInput'].value,
+      category: this.productForm.controls['productCategoryInput'].value,
+      file: this.uploadImg
+    }
+
+    this.products_service.postProduct(newProduct).subscribe(res => {
       
     });
+
+    
   }
 }

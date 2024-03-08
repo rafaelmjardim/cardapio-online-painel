@@ -34,7 +34,7 @@ export class ProductsComponent implements OnInit {
   deleteProduct = (codigo: number, urlImage: string) => {        
     this.products_service.deleteProduct(codigo, urlImage).subscribe({
       next: (delete_response) => {
-        console.log('Deletou');
+        this.onGetProducts();
       },
       error: (error_response: HttpErrorResponse) => {
         console.log('Falha ao deletar:', error_response);
