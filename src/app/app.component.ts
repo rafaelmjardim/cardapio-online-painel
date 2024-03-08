@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './services/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cardapio-online-painel';
 
-  testeList: string[] = ['teste1', 'teste2']
+  constructor (
+    public user_service: UserService
+  ){}
 }
