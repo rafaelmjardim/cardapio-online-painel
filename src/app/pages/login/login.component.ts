@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -40,11 +41,11 @@ export class LoginComponent implements OnInit {
         const token = login_response.token;
         localStorage.setItem('token', token);
 
-        this.auth_service.isLoggedIn();
+      this.auth_service.isLoggedIn();
         this.router.navigateByUrl('/')   
       },
-      error: (login_error) => {
-        alert('Usuário invalido! Tente novamente.');        
+      error: (login_error: HttpErrorResponse) => {
+        alert('Usuário invalido! Tente novamente.');  
       }
     })
   }
