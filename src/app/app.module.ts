@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 
 import { LucideAngularModule, Home, PackageSearch, ShoppingCart, X, User, LogOut } from 'lucide-angular';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LucideAngularModule, Home, PackageSearch, ShoppingCart, X, User, LogOut
     SidebarComponent,
     HomeComponent,
     ProductsComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { AuthGuard } from './guards/auth.guard';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 const routes: Routes = [
   {
@@ -12,15 +13,21 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'login',
+    component: LoginComponent,
+    loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginModule)
+  },
+  {
     path: 'produtos',
     component: ProductsComponent,
     loadChildren: () => import('./pages/products/products.module').then((m) => m.ProductsModule),
     canActivate: [AuthGuard]
   },
   {
-    path: 'login',
-    component: LoginComponent,
-    loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginModule)
+    path: 'pedidos',
+    component: OrdersComponent,
+    loadChildren: () => import('./pages/orders/orders.module').then((m) => m.OrdersModule),
+    canActivate: [AuthGuard]
   }
 ];
 
