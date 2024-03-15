@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 
 import { OrdersComponent } from './pages/orders/orders.component';
+import { OrdersModule } from './pages/orders/orders.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,6 @@ import { OrdersComponent } from './pages/orders/orders.component';
     SidebarComponent,
     HomeComponent,
     ProductsComponent,
-    OrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +26,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    OrdersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
