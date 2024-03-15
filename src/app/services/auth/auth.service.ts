@@ -10,7 +10,7 @@ const API_KEY = environment.API_KEY;
   providedIn: 'root'
 })
 export class AuthService {
-  isLogged: boolean = false;
+  isLogged: boolean = localStorage.getItem('token') ? true : false;
 
   constructor(private http: HttpClient) {}
 
