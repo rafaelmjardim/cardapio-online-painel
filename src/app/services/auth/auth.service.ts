@@ -10,14 +10,14 @@ const API_KEY = environment.API_KEY;
   providedIn: 'root'
 })
 export class AuthService {
+  isLogged: boolean = false;
 
   constructor(private http: HttpClient) {}
 
-  isLoggedIn = (): boolean => {
+  isLoggedIn = () => {
     const token = localStorage.getItem('token');
-console.log('teste de render');
-
-    return !!token // returna true se o token existir, false se não!!
+    
+    this.isLogged = !!token;// returna true se o token existir, false se não!!     
   }
 
   login = (login: Login): Observable<any> => {
@@ -26,5 +26,6 @@ console.log('teste de render');
 
   logout = () => {
     localStorage.removeItem('token');
+    this.isLoggedIn();
   }
 }
