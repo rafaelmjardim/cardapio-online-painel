@@ -4,5 +4,7 @@ export type Order = {
     id_cliente: number
     valor: number
     mesa: number
-    status: 'pendente' | 'em andamento' | 'finalizado'
+    data_venda: string
+    hora_venda: string
+    status: 'aguardando' | 'producao' | 'finalizado'
 }

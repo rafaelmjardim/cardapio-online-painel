@@ -1,1 +1,12 @@
-<p>orders-list works!</p>
+<ul class="orders_list">
+    <li class="orders_list_item" [ngClass]="{'selected': orders_service.currentOrder === order}" *ngFor="let order of ordersList; let i = index" (click)="selectOrder(order, i + 1)">
+        <div class="orders_list_item_content">
+            <h2 class="orders_list_item_content_title">Pedido #{{i + 1}}</h2>
+            <p class="orders_list_item_content_subtitle">{{order.data_venda}} às {{order.hora_venda}}</p>
+        </div>
+
+        <div class="orders_list_item_status started">
+            Em preparo!
+        </div>
+    </li>
+</ul>

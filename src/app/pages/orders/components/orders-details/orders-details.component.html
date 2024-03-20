@@ -1,1 +1,42 @@
-<p>orders-details works!</p>
+<div class="orders_details">
+    <!-- <span>{{orders_service.currentOrder.valor}}</span> -->
+    <div class="orders_details_header">
+        <div class="orders_details_content">
+            <h2 class="orders_details_header_content_title">Pedido # 1</h2>
+            <p class="orders_details_header_content_subtitle">15/03/2024 às 14:00</p>
+        </div>
+        
+        <div class="orders_details_header_client">
+            <lucide-icon name="user"></lucide-icon>
+            Nome cliente
+        </div>
+    </div>
+
+    <div class="orders_details_group space-between">        
+        <div class="orders_details_group_details">
+            <label class="orders_details_group_details_label">Observações</label>
+            <span class="orders_details_group_details_obs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        </div>
+
+        <div>
+            Mesa: 4
+        </div>
+    </div>
+    
+    <div class="orders_details_group">
+        <div class="orders_details_group_header">
+            <h2 class="orders_details_group_header_title">Menu do pedido</h2>
+        </div>
+
+        <ul class="orders_details_group_menu">
+            <li class="orders_details_group_menu_item">
+                <img src="https://www.osteriavallebresciana.it/wp-content/uploads/2020/05/shutterstock_89536951-scaled-e1589783166588.jpg">
+
+                <div class="orders_details_group_menu_item_content">
+                    <span class="orders_details_group_menu_item_content_name">Nome do item</span>
+                    <span class="orders_details_group_menu_item_content_count">1x</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
