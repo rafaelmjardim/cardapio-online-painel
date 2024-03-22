@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../../orders';
 import { OrdersService } from '../../orders.service';
+import { Order } from '../../orders';
 
 @Component({
   selector: 'app-orders-list',
@@ -8,8 +8,7 @@ import { OrdersService } from '../../orders.service';
   styleUrls: ['./orders-list.component.scss']
 })
 export class OrdersListComponent implements OnInit {
-  ordersList!: Order[];
-
+  ordersList: Order[] = [];
   currentOrder!: Order;
 
   constructor (
@@ -17,48 +16,21 @@ export class OrdersListComponent implements OnInit {
   ){}
   
   ngOnInit(): void {
-    this.initOrders();
+    this.onGetOrders();
   }
 
   selectOrder = (order: Order, orderNumber: number) => {
     if (order) {
-      this.orders_service.currentOrder = order;      
-      this.orders_service.currentOrderNumber = orderNumber;
+     this.orders_service.updateSelectedOrderSubject(order, orderNumber);
+     this.currentOrder = order;
     }
   }
 
-  initOrders = () => {
-    this.ordersList = [
-      {
-        codigo: 1,
-        data_venda: '15/03/2024',
-        hora_venda: '14:00',
-        id_cliente: 2,
-        id_produto: 22,
-        mesa: 1,
-        status: 'aguardando',
-        valor: 22
-      },
-      {
-        codigo: 2,
-        data_venda: '15/03/2024',
-        hora_venda: '15:00',
-        id_cliente: 5,
-        id_produto: 22,
-        mesa: 2,
-        status: 'aguardando',
-        valor: 21
-      },
-      {
-        codigo: 3,
-        data_venda: '15/03/2024',
-        hora_venda: '15:30',
-        id_cliente: 1,
-        id_produto: 22,
-        mesa: 6,
-        status: 'aguardando',
-        valor: 20
-      },
-    ]
+  onGetOrders = () => {
+    this.orders_service.getOrders().subscribe({
+      next: (pedidos_response) => {
+        this.ordersList = pedidos_response;        
+      }
+    })
   }
 }

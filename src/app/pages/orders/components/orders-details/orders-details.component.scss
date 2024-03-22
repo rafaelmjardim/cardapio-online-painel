@@ -67,17 +67,33 @@
                 max-width: 32rem;
             }
         }
+    }
 
-        &_menu {
+    &_menu {
+        padding: 1rem 0;
+        height: calc(100% - 22rem);
+        position: relative;
+
+        &_header {            
+            &_title {
+                font-size: 1.8rem;
+            }
+        }
+
+        &_list{
+            max-height: 40rem;
+            overflow-x: hidden;
+            
             &_item {
-                padding: 1rem;
-                
+                padding: 1rem 0;
                 display: flex;
                 gap: 1rem;
 
                 img {
-                    width: auto;
-                    height: 5rem;
+                    width: 8rem;
+                    height: 7rem;
+                    object-fit: cover;
+                    background-size: cover;
                     border-radius: .5rem;
                 }
 
@@ -95,6 +111,14 @@
                     }
                 }
             }
+        }
+
+        &_actions {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
         }
     }
 }

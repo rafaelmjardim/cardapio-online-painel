@@ -1,0 +1,80 @@
+{
+  "pedidos": [
+    {
+      "id": "a814",
+      "id_cliente": 1,
+      "mesa": 2,
+      "lista_carrinho": [
+        {
+          "codigo": 50,
+          "codigo_interno": 1,
+          "nome": "Rafateste",
+          "valor_venda": 10,
+          "valor_promo": 1,
+          "descricao": "Rafa",
+          "status": 1,
+          "id_categoria": 1,
+          "id_adicional": 1,
+          "id_sabor": 1,
+          "destaque": 1,
+          "observacao": "",
+          "tamanho": "",
+          "imagem": "http://177.137.118.186:9090/1709772594082-241239737HamburguerAlcatraComBacon_1-scaled.jpg",
+          "quantidade": 1,
+          "adicionais": {}
+        },
+        {
+          "codigo": 38,
+          "codigo_interno": null,
+          "nome": "Coca-Cola Zero",
+          "valor_venda": 41,
+          "valor_promo": null,
+          "descricao": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+          "status": 1,
+          "id_categoria": 3,
+          "id_adicional": null,
+          "id_sabor": null,
+          "destaque": null,
+          "observacao": null,
+          "tamanho": null,
+          "imagem": "http://177.137.118.186:9090/1689449574753-407752956Coca zero.jpg",
+          "quantidade": 1,
+          "adicionais": {}
+        }
+      ],
+      "data_venda": "2024-03-21T02:06:36.356Z",
+      "form_pag": 1,
+      "entrega": false,
+      "finalizado": false
+    },
+    {
+      "id": "4fd9",
+      "id_cliente": 1,
+      "mesa": 2,
+      "lista_carrinho": [
+        {
+          "codigo": 35,
+          "codigo_interno": null,
+          "nome": "Fritas com molho",
+          "valor_venda": 27,
+          "valor_promo": null,
+          "descricao": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+          "status": 1,
+          "id_categoria": 2,
+          "id_adicional": null,
+          "id_sabor": null,
+          "destaque": null,
+          "observacao": null,
+          "tamanho": null,
+          "imagem": "http://177.137.118.186:9090/1689449284141-705902016fritas com molho.jpg",
+          "quantidade": 2,
+          "adicionais": {}
+        }
+      ],
+      "data_venda": "2024-03-21T02:17:21.599Z",
+      "form_pag": 1,
+      "entrega": false,
+      "finalizado": false
+    }
+  ]
+}
