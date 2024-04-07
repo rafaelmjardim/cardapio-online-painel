@@ -7,6 +7,8 @@ import { NewProduct } from './components/create-product-dialog/create-product-di
 
 const API_KEY = environment.API_KEY;
 
+const token = localStorage.getItem('token');
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,9 +26,7 @@ export class ProductsService {
     return this.http.get<ProductREQ>(`${API_KEY}/produtos`);
   }
   
-  postProduct = (newProduct: NewProduct) => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA5ODYxODEyLCJleHAiOjE3MDk5NDgyMTJ9.5dxldxx2MntRhsu09ZO4chqgIXOhmQjDFM7IUV_RuPE'
-    
+  postProduct = (newProduct: NewProduct) => {    
     const formData = new FormData();
     formData.append('upload_imagem', newProduct.file)
     
@@ -47,17 +47,16 @@ export class ProductsService {
     
     return this.http.post(`${API_KEY}/produtos`, formData, {
       headers: new HttpHeaders({
-        'x-access-token': token
+        'x-access-token': token ?? ''
       }),
     });
   }
   
   deleteProduct = (codigo: number, urlImage: string) => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA5ODYyNzYwLCJleHAiOjE3MDk5NDkxNjB9.azI_N8UWahMDFjeyK4VP7FUrMkuqUCMnXdvFvUxBN9g'
     const httpOptions = {
       params: new HttpParams().set('codigo', codigo).set('nome_imagem_delete', urlImage),
       headers: new HttpHeaders({
-        'x-access-token': token
+        'x-access-token': token ?? ''
       })
     }
   

@@ -16,7 +16,7 @@
             <li class="products_main_card_item" *ngFor="let product of productsList">
                 {{product.nome}}
 
-                <img [src]="product.imagem" alt="Imagem do produto">
+                <img [src]="API_URL + product.imagem" alt="Imagem do produto">
                 <lucide-icon class="products_main_card_item_delete" name="X" (click)="deleteProduct(product.codigo, product.imagem)"></lucide-icon>
             </li>
         </ul>
