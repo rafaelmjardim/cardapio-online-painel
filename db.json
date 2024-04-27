@@ -19,7 +19,7 @@
           "destaque": 1,
           "observacao": "",
           "tamanho": "",
-          "imagem": "http://177.137.118.186:9090/1709772594082-241239737HamburguerAlcatraComBacon_1-scaled.jpg",
+          "imagem": "1709772594082-241239737HamburguerAlcatraComBacon_1-scaled.jpg",
           "quantidade": 1,
           "adicionais": {}
         },
@@ -37,7 +37,7 @@
           "destaque": null,
           "observacao": null,
           "tamanho": null,
-          "imagem": "http://177.137.118.186:9090/1689449574753-407752956Coca zero.jpg",
+          "imagem": "1689449574753-407752956Coca zero.jpg",
           "quantidade": 1,
           "adicionais": {}
         }
@@ -66,7 +66,7 @@
           "destaque": null,
           "observacao": null,
           "tamanho": null,
-          "imagem": "http://177.137.118.186:9090/1689449284141-705902016fritas com molho.jpg",
+          "imagem": "1689449284141-705902016fritas com molho.jpg",
           "quantidade": 2,
           "adicionais": {}
         }

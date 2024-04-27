@@ -29,7 +29,7 @@
 
         <ul class="orders_details_menu_list">
             <li class="orders_details_menu_list_item" *ngFor="let cart of currentOrder.lista_carrinho">
-                <img [src]="cart.imagem">
+                <img [src]="API_URL + cart.imagem">
 
                 <div class="orders_details_menu_list_item_content">
                     <span class="orders_details_menu_list_item_content_name">{{cart.nome}}</span>

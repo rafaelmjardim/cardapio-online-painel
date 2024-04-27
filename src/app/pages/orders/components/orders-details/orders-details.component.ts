@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OrdersService } from '../../orders.service';
 import { Order } from '../../orders';
 import { Subscription } from 'rxjs';
+import { UtilsService } from 'src/app/services/utils/utils.service';
 
 @Component({
   selector: 'app-orders-details',
@@ -13,12 +14,16 @@ export class OrdersDetailsComponent implements OnInit, OnDestroy {
   currentOrder!: Order;
   orderNumber!: number;
 
+  API_URL!: string;
+
   constructor (
-    public orders_service: OrdersService,
+    private utils_service: UtilsService,
+    public orders_service: OrdersService
   ){}
 
   ngOnInit(): void {
     this.setSelectedOrderes();
+    this.API_URL = this.utils_service.returnURLServer();
   }
 
   ngOnDestroy(): void {

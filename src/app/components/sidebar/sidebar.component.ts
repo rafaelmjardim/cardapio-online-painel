@@ -33,9 +33,14 @@ export class SidebarComponent implements OnInit {
         rota: '/produtos',
       },
       {
-        name: 'Pedidos',
+        name: 'Últimos Pedidos',
         icon: 'ShoppingCart',
         rota: '/pedidos',
+      },
+      {
+        name: 'Mesas',
+        icon: 'ShoppingCart',
+        rota: '/mesas',
       },
     ]
   }
