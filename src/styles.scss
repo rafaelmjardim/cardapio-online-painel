@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +8,11 @@
 
 html {
     font-size: 10px;
+    font-family: 'Rubik', sans-serif;
 }
 
 body {
     font-size: 1.6rem;
-    font-family: sans-serif;
     color: #444;
 }
 
@@ -23,8 +25,8 @@ a {
     color: black;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-button {font-family: Roboto, "Helvetica Neue", sans-serif;}
+body { margin: 0;}
+button {font-family: 'Rubik', sans-serif;}
 
 // classes globais
 
