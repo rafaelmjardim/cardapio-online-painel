@@ -36,17 +36,35 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.controls['passwordInput'].value
     }
 
-    this.auth_service.login(login).subscribe({
-      next: (login_response) => {
-        const token = login_response.token;
-        localStorage.setItem('token', token);
+    //Para retornar ao login normal presica se apagado a função de login fake e descomentado o codigo abaixo
+    this.loginFake(login);
 
+    // this.auth_service.login(login).subscribe({
+    //   next: (login_response) => {
+    //     const token = login_response.token;
+    //     localStorage.setItem('token', token);
+
+    //   this.auth_service.isLoggedIn();
+    //     this.router.navigateByUrl('/')   
+    //   },
+    //   error: (login_error: HttpErrorResponse) => {
+    //     alert('Usuário invalido! Tente novamente.');  
+    //   }
+    // })
+  }
+
+  loginFake = (login: Login) => {
+    const loginFake: Login = {
+      user: 'admin',
+      password: 'admin'
+    }
+    
+    if (login.user === loginFake.user && login.password === loginFake.password) {
+      localStorage.setItem('token', 'tokenFake--DASHDIUASHDIUASHDIUASH')
       this.auth_service.isLoggedIn();
-        this.router.navigateByUrl('/')   
-      },
-      error: (login_error: HttpErrorResponse) => {
-        alert('Usuário invalido! Tente novamente.');  
-      }
-    })
+      this.router.navigateByUrl('/')  
+    } else {
+      console.log('Login invalido!');
+    }
   }
 }
