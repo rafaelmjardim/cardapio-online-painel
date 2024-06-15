@@ -1,6 +1,6 @@
 .sidebar {
     width: 25rem;
-    height: 100vh;
+    height: calc(100vh - 7rem);
     border-right: .1rem solid #ccc;
 
     &_header {

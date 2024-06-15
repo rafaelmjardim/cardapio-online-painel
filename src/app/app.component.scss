@@ -1,8 +1,13 @@
 .app {
     display: flex;
+    flex-direction: column;
 
     &_main {
-        // padding: 2rem;
-        width: 100%;
+        display: flex;
+        
+        &_content {
+            // padding: 2rem;
+            width: 100%;
+        }
     }
 }

@@ -1,9 +1,16 @@
 <div class="app">
-  <div class="app_sidebar" *ngIf="auth_service.isLogged">
-    <app-sidebar></app-sidebar>
+  <div class="app_header" *ngIf="auth_service.isLogged">
+    <app-header title="Cardapio Painel"></app-header>
   </div>
 
-  <div class="app_main" [ngStyle]="{'padding': auth_service.isLogged ? '2rem' : '0'}">
-    <router-outlet></router-outlet>
+  <div class="app_main">
+    <div class="app_main_sidebar" *ngIf="auth_service.isLogged">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="app_main_content" [ngStyle]="{'padding': auth_service.isLogged ? '2rem' : '0'}">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+
 </div>
