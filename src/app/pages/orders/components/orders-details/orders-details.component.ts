@@ -45,7 +45,7 @@ export class OrdersDetailsComponent implements OnInit, OnDestroy {
     const editOrder: Order = {...this.currentOrder, finalizado: true}
     
     this.orders_service.putFinishOrder(editOrder).subscribe(editOrder => {
-      console.log('editado');
+      this.orders_service.updateFilterOrderList(true);
     })
   }  
 }

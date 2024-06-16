@@ -13,10 +13,18 @@ export class OrdersService {
   private selectedOrderSubject = new BehaviorSubject<SubjectOrder>({order: null, orderNumberIndex: 0});
   selectedOrderStream$ = this.selectedOrderSubject.asObservable();
 
+  //Fazer ojeto de subjects depois
+  private filterOrderListSubject = new BehaviorSubject<{orderFinalized: boolean}>({orderFinalized: false});
+  filterOrderStream$ = this.filterOrderListSubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
   updateSelectedOrderSubject = (order: Order, orderNumberIndex: number) => {
     this.selectedOrderSubject.next({order, orderNumberIndex});
+  }
+
+  updateFilterOrderList = (filterOrder: boolean) => {
+    this.filterOrderListSubject.next({orderFinalized: filterOrder});
   }
 
   getOrders = (): Observable<GET_PEDIDOS_RESPONSE> => {
