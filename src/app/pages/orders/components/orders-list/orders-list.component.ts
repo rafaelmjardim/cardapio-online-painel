@@ -11,6 +11,8 @@ export class OrdersListComponent implements OnInit {
   ordersList: Order[] = [];
   currentOrder!: Order;
 
+  filterButton: number = 1;
+
   constructor (
     public orders_service: OrdersService
   ){}
@@ -32,5 +34,9 @@ export class OrdersListComponent implements OnInit {
         this.ordersList = pedidos_response;        
       }
     })
+  }
+
+  changeFilterButton = (filterButtonSelected: number) => {
+    this.filterButton = filterButtonSelected;
   }
 }

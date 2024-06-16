@@ -1,4 +1,11 @@
 <ul class="orders_list">
+    <div class="orders_list_header">
+        <div class="orders_list_header_action">
+            <button class="orders_list_header_action_button process" [ngClass]="{'selected': filterButton === 1}" (click)="changeFilterButton(1)">Em Preparo</button>
+            <button class="orders_list_header_action_button finish" [ngClass]="{'selected': filterButton === 2}" (click)="changeFilterButton(2)">Finalizados</button>
+        </div>
+    </div>
+
     <li class="orders_list_item" [ngClass]="{'selected': currentOrder === order}" *ngFor="let order of ordersList; let i = index" (click)="selectOrder(order, i + 1)">
         <div class="orders_list_item_content">
             <h2 class="orders_list_item_content_title">Pedido #{{i + 1}}</h2>
