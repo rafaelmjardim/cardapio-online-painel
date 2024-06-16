@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { GET_PEDIDOS_RESPONSE, Order, SubjectOrder } from './orders';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/environment.prod';
