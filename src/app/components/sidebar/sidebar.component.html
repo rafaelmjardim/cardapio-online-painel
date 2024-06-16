@@ -1,11 +1,7 @@
 <div class="sidebar">
-    <div class="sidebar_header">
-        <h1 class="sidebar_header_title">Cardapio Painel</h1>
-    </div>
-
     <ul class="sidebar_menu">
-        <li class="sidebar_menu_item" [ngStyle]="{'background-color': location.path() === option.rota ? '#ccc' : '' }" [routerLink]="option.rota" *ngFor="let option of menuList">
-            <lucide-icon [name]="option.icon" color="#444"></lucide-icon>
+        <li class="sidebar_menu_item" [ngClass]="{'selected': location.path() === option.rota}" [routerLink]="option.rota" *ngFor="let option of menuList">
+            <lucide-icon [name]="option.icon" ></lucide-icon>
             <span>{{option.name}}</span>
         </li>
     </ul>

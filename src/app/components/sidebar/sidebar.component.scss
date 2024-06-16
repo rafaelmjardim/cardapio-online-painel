@@ -3,30 +3,29 @@
     height: calc(100vh - 7rem);
     border-right: .1rem solid #ccc;
 
-    &_header {
-        display: flex;
-        justify-content: center;
-        padding: 2rem 0;
-
-        &_title {
-            font-size: 2.2rem;
-        }
-    }
-
     &_menu {
         display: flex;
         flex-direction: column;
+        padding: 1rem;
 
         &_item {
             display: flex;
             align-items: center;
             gap: 1.2rem;
             padding: 1.2rem 2rem;
+            border-radius: .5rem;
+            color: #444;
             cursor: pointer;
             transition: .2s;
 
             &:hover {
-                background-color: #ddd;
+                // background-color: #ddd;
+                color: rgb(224, 119, 20);
+            }
+
+            &.selected {
+                background-color: rgb(224, 119, 20);
+                color: #fff;
             }
         }
     }
