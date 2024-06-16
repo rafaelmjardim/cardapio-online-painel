@@ -12,8 +12,8 @@
             <p class="orders_list_item_content_subtitle">{{order.data_venda | date: 'dd/MM/yyyy HH:mm'}}</p>
         </div>
 
-        <div class="orders_list_item_status started">
-            Em preparo!
+        <div class="orders_list_item_status started" [ngClass]="{'finish': order.finalizado}">
+            {{order.finalizado ? 'Finalizado' : 'Em preparo!'}}
         </div>
     </li>
 </ul>
