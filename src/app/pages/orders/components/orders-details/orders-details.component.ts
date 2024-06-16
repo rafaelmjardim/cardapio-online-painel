@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OrdersService } from '../../orders.service';
-import { Order } from '../../orders';
+import { Cart, Order } from '../../orders';
 import { Subscription } from 'rxjs';
 import { UtilsService } from 'src/app/services/utils/utils.service';
 
@@ -38,5 +38,14 @@ export class OrdersDetailsComponent implements OnInit, OnDestroy {
       }
     })
   }
-  
+
+  finishSubmit = () => {
+    //editar pedido para finaliza-lo
+
+    const editOrder: Order = {...this.currentOrder, finalizado: true}
+    
+    this.orders_service.putFinishOrder(editOrder).subscribe(editOrder => {
+      console.log('editado');
+    })
+  }  
 }

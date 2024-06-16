@@ -22,4 +22,11 @@ export class OrdersService {
   getOrders = (): Observable<GET_PEDIDOS_RESPONSE> => {
     return this.http.get<GET_PEDIDOS_RESPONSE>(`${API_KEY}/pedidos`)
   }
+
+  putFinishOrder = (orderEdit: Order) => {
+    return this.http.put(`${API_KEY}/pedidos/${orderEdit.id}`, {
+      ...orderEdit,
+      finalizado: orderEdit.finalizado
+    })
+  }
 }
