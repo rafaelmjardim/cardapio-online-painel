@@ -40,7 +40,9 @@ export class OrdersDetailsComponent implements OnInit, OnDestroy {
   }
 
   finishSubmit = () => {
-    //editar pedido para finaliza-lo
+    if (this.currentOrder.finalizado) {
+      return
+    }    
 
     const editOrder: Order = {...this.currentOrder, finalizado: true}
     

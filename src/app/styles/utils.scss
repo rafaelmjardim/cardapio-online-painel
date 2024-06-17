@@ -1,6 +1,7 @@
 @import "../styles/config.scss";
 
 .button {
+    border: none;
     border-radius: .5rem;
     width: 11rem;
     height: 3.5rem;
@@ -23,6 +24,16 @@
         
         &:hover {
             background-color: rgb(199, 118, 42);
+        }
+    }
+
+    &.disable {
+        border: .1rem solid #b1b1b1;
+        background-color: #ccc;    
+        color: #777;    
+
+        &:hover {
+            background-color: #ccc;
         }
     }
 }

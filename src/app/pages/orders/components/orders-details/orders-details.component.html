@@ -39,7 +39,7 @@
         </ul>
 
         <div class="orders_details_menu_actions">
-            <button class="button primary" (click)="finishSubmit()">Finalizar</button>
+            <button class="button primary" [ngClass]="{'disable': currentOrder.finalizado}" (click)="finishSubmit()">Finalizar</button>
         </div>
     </div>
 </div>
