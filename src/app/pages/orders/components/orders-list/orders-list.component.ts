@@ -26,7 +26,7 @@ export class OrdersListComponent implements OnInit {
 
   //melhorar essa função (ficou confuso mas funciona) Apos clicar em finalizar pedido envia pro servico o next e o get é chamado novamente
   checkGetFinishOrder = () => {
-    this.orders_service.filterOrderStream$.subscribe(res => {
+    this.orders_service.streams.filterOrderStream$.subscribe(res => {
       this.onGetOrders();
     })
   }

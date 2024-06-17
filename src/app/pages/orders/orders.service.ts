@@ -10,21 +10,24 @@ const API_KEY = environment.JSON_SERVER;
   providedIn: 'root'
 })
 export class OrdersService {
-  private selectedOrderSubject = new BehaviorSubject<SubjectOrder>({order: null, orderNumberIndex: 0});
-  selectedOrderStream$ = this.selectedOrderSubject.asObservable();
+  private subjects = {
+    selectedOrder: new BehaviorSubject<SubjectOrder>({order: null, orderNumberIndex: 0}),
+    filterOrderList: new BehaviorSubject<{orderFinalized: boolean}>({orderFinalized: false})
+  }
 
-  //Fazer ojeto de subjects depois
-  private filterOrderListSubject = new BehaviorSubject<{orderFinalized: boolean}>({orderFinalized: false});
-  filterOrderStream$ = this.filterOrderListSubject.asObservable();
+  streams = {
+    selectedOrder$: this.subjects.selectedOrder.asObservable(),
+    filterOrderStream$: this.subjects.filterOrderList.asObservable()
+  }
 
   constructor(private http: HttpClient) { }
 
   updateSelectedOrderSubject = (order: Order, orderNumberIndex: number) => {
-    this.selectedOrderSubject.next({order, orderNumberIndex});
+    this.subjects.selectedOrder.next({order, orderNumberIndex});
   }
 
   updateFilterOrderList = (filterOrder: boolean) => {
-    this.filterOrderListSubject.next({orderFinalized: filterOrder});
+    this.subjects.filterOrderList.next({orderFinalized: filterOrder});
   }
 
   getOrders = (): Observable<GET_PEDIDOS_RESPONSE> => {

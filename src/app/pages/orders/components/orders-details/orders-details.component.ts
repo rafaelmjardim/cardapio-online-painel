@@ -31,7 +31,7 @@ export class OrdersDetailsComponent implements OnInit, OnDestroy {
   }
 
   setSelectedOrderes = () => {
-    this.subscription = this.orders_service.selectedOrderStream$.subscribe(currentOrder => {
+    this.subscription = this.orders_service.streams.selectedOrder$.subscribe(currentOrder => {
       if (currentOrder.order) {
         this.currentOrder = currentOrder.order;
         this.orderNumber = currentOrder.orderNumberIndex;        
