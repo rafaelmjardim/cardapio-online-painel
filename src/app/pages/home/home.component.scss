@@ -31,6 +31,12 @@
                         background-color: #fff;
                         display: grid;
                         grid-template-rows: 60% 35%;
+                        cursor: pointer;
+                        transition: .3s ease;
+
+                        &:hover {
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                        }
 
                         &_image {
                             width: auto;
