@@ -1,3 +1,5 @@
+@import '../../styles/config.scss';
+
 .home {
     height: 100%;
 
@@ -25,9 +27,50 @@
                     
                     &_card {
                         border: .1rem solid #ccc;
-                        padding: 1rem;
-                        border-radius: 1rem;
-                        
+                        border-radius: 1rem;  
+                        background-color: #fff;
+                        display: grid;
+                        grid-template-rows: 65% 35%;
+
+                        &_image {
+                            position: relative;
+
+                            &_classification {
+                                position: absolute;
+                                right: 0;
+                                padding: .6rem .8rem;
+                                background-color: $primary-color;
+                                color: #ddd;
+                                border-radius: 0 1rem 0 1rem;
+                                border: .1rem solid #555;
+                            }
+
+                            img {
+                                object-fit: cover;
+                                background-size: cover;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 1rem 1rem 0 0;
+                            }
+                        }
+
+                        &_content {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 1.4rem;
+                            padding: 1.2rem;
+
+                            &_title {
+                                font-weight: 500;
+                            }
+
+                            &_price {
+                                color: $primary-color;
+                                font-weight: 600;
+                            }
+                        }
+                      
                     }
                 }
                 

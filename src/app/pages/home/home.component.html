@@ -5,27 +5,23 @@
             <div class="home_container_row_box">
                 Top 5 mais pedidos
 
-                <div class="home_container_row_box_list">
-                    <div class="home_container_row_box_list_card">
-                        Top 1
-                    </div>
-    
-                    <div class="home_container_row_box_list_card">
-                        Top 2
-                    </div>
-    
-                    <div class="home_container_row_box_list_card">
-                        Top 3
-                    </div>
-    
-                    <div class="home_container_row_box_list_card">
-                        Top 4
-                    </div>
-    
-                    <div class="home_container_row_box_list_card">
-                        Top 5
-                    </div>
-                </div>
+                <ul class="home_container_row_box_list">
+                    <li class="home_container_row_box_list_card" *ngFor="let topProduct of topProductsList; let i = index">
+                        <div class="home_container_row_box_list_card_image">
+                            <div class="home_container_row_box_list_card_image_classification">
+                                Top {{i + 1}}
+                            </div>
+
+                            <img [src]="API_URL + topProduct.image" alt="Imagem do produto">
+                        </div>
+
+                        <div class="home_container_row_box_list_card_content">
+                            <span class="home_container_row_box_list_card_content_title">{{topProduct.title}}</span>
+                            <span class="home_container_row_box_list_card_content_price">{{topProduct.value | currency: 'BRL'}}</span>
+                        </div>
+                    </li>
+                   
+                </ul>
                
             </div>
         </div>
