@@ -8,7 +8,7 @@
 
     <li class="orders_list_item" [ngClass]="{'selected': currentOrder === order}" *ngFor="let order of ordersListFiltered; let i = index" (click)="selectOrder(order, i + 1)">
         <div class="orders_list_item_content">
-            <h2 class="orders_list_item_content_title">Pedido #{{i + 1}}</h2>
+            <h2 class="orders_list_item_content_title">Pedido #{{order.id}}</h2>
             <p class="orders_list_item_content_subtitle">{{order.data_venda | date: 'dd/MM/yyyy HH:mm'}}</p>
         </div>
 

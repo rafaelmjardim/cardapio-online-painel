@@ -4,6 +4,7 @@ export interface Order {
   id: string
   id_cliente: number
   mesa: number
+  nome_cliente: string
   lista_carrinho: Cart[]
   data_venda: string
   form_pag: number
