@@ -37,20 +37,20 @@ export class LoginComponent implements OnInit {
     }
 
     //Para retornar ao login normal presica se apagado a função de login fake e descomentado o codigo abaixo
-    this.loginFake(login);
+    // this.loginFake(login);
 
-    // this.auth_service.login(login).subscribe({
-    //   next: (login_response) => {
-    //     const token = login_response.token;
-    //     localStorage.setItem('token', token);
+    this.auth_service.login(login).subscribe({
+      next: (login_response) => {
+        const token = login_response.token;
+        localStorage.setItem('token', token);
 
-    //   this.auth_service.isLoggedIn();
-    //     this.router.navigateByUrl('/')   
-    //   },
-    //   error: (login_error: HttpErrorResponse) => {
-    //     alert('Usuário invalido! Tente novamente.');  
-    //   }
-    // })
+      this.auth_service.isLoggedIn();
+        this.router.navigateByUrl('/')   
+      },
+      error: (login_error: HttpErrorResponse) => {
+        alert('Usuário invalido! Tente novamente.');  
+      }
+    })
   }
 
   loginFake = (login: Login) => {
